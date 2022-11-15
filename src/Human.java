@@ -5,11 +5,11 @@ public class Human {
     String town;
     String jobTitle;
 
-    void meetPerson(int yearOfBirth, String name, String town, String jobTitle) {
-        this.name = name;
-        this.town = town;
-        this.yearOfBirth = yearOfBirth;
-        this.jobTitle = jobTitle;
+    void meetPerson() {
+        System.out.println("Привет!");
+        System.out.println("Меня зовут " + name);
+        System.out.println("Мне " + yearOfBirth + " лет");
+        System.out.println("Я из города " + town);
     }
 
     @Override

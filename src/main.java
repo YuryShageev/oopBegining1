@@ -1,5 +1,13 @@
 public class main {
     public static void main(String[] args) {
+
+
+        Human meetPerson = new Human();
+        meetPerson.name = "Юра";
+        meetPerson.yearOfBirth = 33;
+        meetPerson.town = "Краснодар";
+        meetPerson.meetPerson();
+
         Human meetPerson1 = new Human();
         meetPerson1.yearOfBirth = 1988;
         meetPerson1.town = "Минск";
