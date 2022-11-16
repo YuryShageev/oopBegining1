@@ -5,6 +5,29 @@ public class Human {
     String town;
     String jobTitle;
 
+    Human(String name, String town, int yearOfBirth, String jobTitle) {
+        if (name == null) {
+            System.out.println("Информация не указана");
+        } else {
+            this.name = name;
+        }
+        if (town == null) {
+            System.out.println("Информация не указана");
+        } else {
+            this.town = town;
+        }
+        if (yearOfBirth >= 0) {
+            this.yearOfBirth = yearOfBirth;
+        } else {
+            this.yearOfBirth = Math.abs(yearOfBirth);
+        }
+        if (jobTitle == null) {
+            System.out.println("Информация не указана");
+        } else {
+            this.jobTitle = jobTitle;
+        }
+    }
+
     void meetPerson() {
         System.out.println("Привет!");
         System.out.println("Меня зовут " + name);
