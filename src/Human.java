@@ -6,6 +6,7 @@ public class Human {
     String jobTitle;
 
     Human(String name, String town, int yearOfBirth, String jobTitle) {
+        this();
         if (name == null) {
             System.out.println("Информация не указана");
         } else {
@@ -26,6 +27,13 @@ public class Human {
         } else {
             this.jobTitle = jobTitle;
         }
+    }
+
+    Human() {
+        name = "Чувак";
+        town = "Кудыкина гора";
+        yearOfBirth = 1900;
+        jobTitle = "Пенёк";
     }
 
     void meetPerson() {
