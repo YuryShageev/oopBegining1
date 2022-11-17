@@ -4,8 +4,8 @@ public class main {
 
         Human meetPerson = new Human();
 //        meetPerson.name = "Юра";
-        meetPerson.yearOfBirth = 33;
-        meetPerson.town = "Краснодар";
+        System.out.println(meetPerson.getYearOfBirth());
+        System.out.println(meetPerson.getTown());
         meetPerson.meetPerson();
 
         Human meetPerson1 = new Human("Максим", "Минск", 1988, "Бренд Менеджер");
@@ -35,5 +35,8 @@ public class main {
 //        meetPerson4.name = "Артём";
 //        meetPerson4.jobTitle = "Директор по развитию бизнеса";
         System.out.println(meetPerson4);
+
+        Human meetPerson5 = new Human("Владимир", "Казань", 21, "Не работает");
+        System.out.println(meetPerson5);
     }
 }

@@ -1,12 +1,13 @@
+import java.time.LocalDate;
+
 public class Human {
 
-    int yearOfBirth;
+    private int yearOfBirth;
     String name;
-    String town;
+    private String town;
     String jobTitle;
 
     Human(String name, String town, int yearOfBirth, String jobTitle) {
-        this();
         if (name == null) {
             System.out.println("Информация не указана");
         } else {
@@ -17,8 +18,10 @@ public class Human {
         } else {
             this.town = town;
         }
-        if (yearOfBirth >= 0) {
+        if (yearOfBirth >= 100) {
             this.yearOfBirth = yearOfBirth;
+        } else if (yearOfBirth > 0 && yearOfBirth < 100) {
+            this.yearOfBirth = LocalDate.now().getYear() - yearOfBirth;
         } else {
             this.yearOfBirth = Math.abs(yearOfBirth);
         }
@@ -30,10 +33,11 @@ public class Human {
     }
 
     Human() {
-        name = "Чувак";
-        town = "Кудыкина гора";
+        name = "Информация не указана";
+        town = "Информация не указана";
         yearOfBirth = 1900;
-        jobTitle = "Пенёк";
+        jobTitle = "Информация не указана";
+        new Human(name, town, yearOfBirth, jobTitle);
     }
 
     void meetPerson() {
@@ -43,8 +47,32 @@ public class Human {
         System.out.println("Я из города " + town);
     }
 
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        if (town == null || town.isEmpty() || town.isBlank()) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        if (yearOfBirth <= 0) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Привет! Меня зовут " + name + ". Я из города " + town + ". Я родился в " + yearOfBirth + " году. Я работаю на должности " + jobTitle + ". Будем знакомы!";
+        return "Привет! Меня зовут " + name + ". Я из города " + getTown() + ". Я родился в " + getYearOfBirth() + " году. Я работаю на должности " + jobTitle + ". Будем знакомы!";
     }
 }
